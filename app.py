@@ -14,7 +14,12 @@ many_customers =[
 
 
 #executemany
-cursor.executemany("INSERT INTO customers VALUES (?,?,?)",many_customers)
+cursor.execute("SELECT * FROM customers")
+
+# cursor.fetchone()
+# cursor.fetchmany(3)
+
+print(cursor.fetchall())
 
 print("Command Executed")
 
