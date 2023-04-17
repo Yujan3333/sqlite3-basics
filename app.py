@@ -19,7 +19,15 @@ cursor.execute("SELECT * FROM customers")
 # cursor.fetchone()
 # cursor.fetchmany(3)
 
-print(cursor.fetchall())
+#create a variable to hold the fetched data
+items = cursor.fetchall()
+
+print("Name\t\t\tEmail")
+for item in items:
+    print(item[0]+' '+item[1]+"\t\t"+item[2])
+    
+
+
 
 print("Command Executed")
 
