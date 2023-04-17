@@ -5,8 +5,15 @@ conn =sqlite3.connect('customer.db')
 
 cursor= conn.cursor()
 
-#query the database -- LIMIT
-cursor.execute("SELECT rowid, * FROM customers ORDER BY rowid DESC LIMIT 2")
+#Drop or delete the table
+cursor.execute("DROP TABLE customers")
+conn.commit()
+
+
+
+
+#query the database
+cursor.execute("SELECT rowid, * FROM customers")
 
 items = cursor.fetchall()
 
